@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Write a Review</h2>
+
+    <form method="POST" data-th-action="@{/review}">
+        <table>
+            <div th:object="${review}">
+            <tr>
+                <td>Name: </td>
+                <td>
+                    <input type="text" name="user" size="30" data-th-field="*{user}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Rating:
+                </td>
+                <td>
+                    <input type="number" name="rating" max="10" min="0" data-th-field="*{rating}">
+                </td>
+            </tr>
+            <tr>
+                <td>Comment: </td>
+                <td>
+                    <input type="text" name="comment"  size="90" cols="30" rows="10" data-th-field="*{comment}">
+                </td>
+            </tr>
+            <tr>
+                <td>Game ID: </td>
+                <td>
+                    <input type="text" name="gameId"  size="30" cols="30" rows="10" data-th-field="*{gameId}">
+                </td>
+            </tr>
+        </div>
+        </table>
+        <button type="submit">Submit Review</button>
+    </form>
+</body>
+</html>
